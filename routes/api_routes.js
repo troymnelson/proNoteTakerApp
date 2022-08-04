@@ -5,7 +5,7 @@ const fs = require('fs');
 
 
 const queryData = () => {
-    return fs.promises.readFile('../db/db.json', 'utf8')
+    return fs.promises.readFile(path.join(__dirname, '../Develop/db/db.json'), 'utf8')
     .then(data => JSON.parse(data))
 }
 
@@ -28,11 +28,10 @@ router.post('/notes', (req, res) => {
 
         const newNoteToInput = req.body;
 
-        newNoteToInput.id = uuidv4().slice(0, 6);
 
         data.push(newNoteToInput);
 
-        fs.promises.writeFile('../db/db.json', JSON.stringify(data, null, 2))
+        fs.promises.writeFile(path.join(__dirname, '../Develop/db/db.json'), JSON.stringify(data))
         .then(() => {
             res.json(data);
         })

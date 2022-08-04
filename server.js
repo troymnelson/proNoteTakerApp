@@ -6,7 +6,7 @@ const api_routes = require('./routes/api_routes');
 const note_routes = require('./routes/note_routes');
 
 // allow browser to see public files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Develop/public')));
 
 app.use(express.urlencoded({ extended: true }))
 
@@ -18,17 +18,17 @@ app.use('/notes', note_routes);
 
 // get /notes send file notes
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './Develop/public/notes.html'))
+    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'))
 })
 
 // get root sendfile index
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
+    res.sendFile(path.join(__dirname, 'Develop/public/index.html'));
 })
 
 
 app.get('/api/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './Develop/db/db.json'))
+    res.sendFile(path.join(__dirname, 'Develop/db/db.json'))
 })
 
 //listen for port
