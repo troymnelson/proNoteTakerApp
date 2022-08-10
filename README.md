@@ -6,4 +6,4 @@ A note taker app to help keep you organized!
 
 ## screenshot
 
-![](/assets/screenshot65.jpg?raw=true "Optional Title")
+![](/Assets/screenshot65.jpg?raw=true "Optional Title")
